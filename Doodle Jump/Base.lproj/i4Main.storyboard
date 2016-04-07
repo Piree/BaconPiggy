@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J05-vT-5cZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6NC-kD-qvR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StartBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="YQe-Ze-rf4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="481"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oj-dE-0N2">
+                                <rect key="frame" x="8" y="324" width="305" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PiggieFly.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-Qd-ijo">
+                                <rect key="frame" x="0.0" y="36" width="320" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePiggie.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yog-QS-gWz">
+                                <rect key="frame" x="67" y="118" width="186" height="182"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeBacon.png" translatesAutoresizingMaskIntoConstraints="NO" id="geI-M8-eQ4">
+                                <rect key="frame" x="117" y="259" width="86" height="50"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNs-pc-5ck">
+                                <rect key="frame" x="66" y="358" width="85" height="85"/>
+                                <state key="normal" title="Button" image="StartImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hBR-dU-Xv2" kind="modal" id="ukh-OY-pul"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDg-9z-r4v">
+                                <rect key="frame" x="170" y="358" width="85" height="85"/>
+                                <state key="normal" title="Button" image="RankImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowRank:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="den-2u-GDN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5647059083" green="0.89411771299999998" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="HighScore" destination="6oj-dE-0N2" id="bJv-ln-27z"/>
+                        <outlet property="Rank" destination="uDg-9z-r4v" id="eZ2-D0-0lF"/>
+                        <outlet property="Start" destination="sNs-pc-5ck" id="9oT-te-puF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="121"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="CuN-6G-dtE">
+            <objects>
+                <viewController id="hBR-dU-Xv2" customClass="Game" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rGT-er-PwR"/>
+                        <viewControllerLayoutGuide type="bottom" id="4dk-PS-mQn"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="XlE-K9-hW2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NightBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-4N-xTm">
+                                <rect key="frame" x="-1" y="0.0" width="322" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FadeBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lma-mG-vt3">
+                                <rect key="frame" x="-1" y="0.0" width="322" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FingerMoved.png" translatesAutoresizingMaskIntoConstraints="NO" id="iT8-2B-8jw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Nw-Pf-Pt3">
+                                <rect key="frame" x="12" y="389" width="79" height="35"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="IaE-8a-5WE">
+                                <rect key="frame" x="209" y="335" width="45" height="18"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLg-vP-jK8">
+                                <rect key="frame" x="105" y="28" width="61" height="23"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="GfE-Ku-gWs">
+                                <rect key="frame" x="260" y="15" width="60" height="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="dmU-9u-WqY">
+                                <rect key="frame" x="51" y="555" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="mGJ-ut-aeI">
+                                <rect key="frame" x="82" y="555" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="qKf-dq-vbo">
+                                <rect key="frame" x="121" y="555" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="GUM-wR-4OX">
+                                <rect key="frame" x="153" y="555" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Backlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="VvT-BJ-qfn">
+                                <rect key="frame" x="190" y="555" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GroundBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="CqQ-1g-bhL">
+                                <rect key="frame" x="-1" y="417" width="322" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ground.png" translatesAutoresizingMaskIntoConstraints="NO" id="elt-Qb-4nX">
+                                <rect key="frame" x="-1" y="464" width="322" height="17"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baconfall.png" translatesAutoresizingMaskIntoConstraints="NO" id="0t1-Ha-8d3">
+                                <rect key="frame" x="248" y="253" width="14" height="14"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baconfall.png" translatesAutoresizingMaskIntoConstraints="NO" id="ME0-wj-13k">
+                                <rect key="frame" x="211" y="221" width="14" height="14"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baconfall.png" translatesAutoresizingMaskIntoConstraints="NO" id="VXz-53-EFs">
+                                <rect key="frame" x="152" y="346" width="14" height="14"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baconfall.png" translatesAutoresizingMaskIntoConstraints="NO" id="L1p-a0-9xn">
+                                <rect key="frame" x="12" y="151" width="14" height="14"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baconfall.png" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-55-6u9">
+                                <rect key="frame" x="113" y="489" width="14" height="14"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BaconBomb4.png" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-yI-VdP">
+                                <rect key="frame" x="65" y="316" width="65" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BaconBomb4.png" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-Ud-sCj">
+                                <rect key="frame" x="73" y="402" width="65" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BaconBomb4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ttw-R9-603">
+                                <rect key="frame" x="65" y="461" width="65" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BaconBomb4.png" translatesAutoresizingMaskIntoConstraints="NO" id="ups-YZ-uMz">
+                                <rect key="frame" x="70" y="352" width="65" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BaconBomb4.png" translatesAutoresizingMaskIntoConstraints="NO" id="kAq-Qo-B8V">
+                                <rect key="frame" x="70" y="511" width="65" height="65"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-jh-gFe">
+                                <rect key="frame" x="12" y="20" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.95725381078786975" green="0.93196769375259558" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Piggie4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fdv-ig-egb">
+                                <rect key="frame" x="148" y="442" width="24" height="24"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8p-9O-NUn">
+                                <rect key="frame" x="170" y="348" width="85" height="85"/>
+                                <state key="normal" title="Button" image="RankImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowRank:" destination="hBR-dU-Xv2" eventType="touchUpInside" id="vK8-sL-r4x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Dz-5eD">
+                                <rect key="frame" x="66" y="348" width="85" height="85"/>
+                                <state key="normal" title="Button" image="StartImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartGame:" destination="hBR-dU-Xv2" eventType="touchUpInside" id="utR-qL-swo"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ScoreBoard.png" translatesAutoresizingMaskIntoConstraints="NO" id="iGY-Hb-Y6T">
+                                <rect key="frame" x="62" y="184" width="200" height="128"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:    " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDR-Ew-bY3">
+                                <rect key="frame" x="80" y="224" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New High Score!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgo-5q-04e">
+                                <rect key="frame" x="91" y="188" width="143" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New High Score!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKW-oH-yxL">
+                                <rect key="frame" x="91" y="282" width="143" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GameOver.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xz4-9z-2f4">
+                                <rect key="frame" x="10" y="72" width="300" height="100"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best:      " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-4d-mZG">
+                                <rect key="frame" x="80" y="253" width="305" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Instructions.png" translatesAutoresizingMaskIntoConstraints="NO" id="FDH-ov-fXL">
+                                <rect key="frame" x="90" y="175" width="140" height="240"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZd-1w-QmY">
+                                <rect key="frame" x="5" y="20" width="60" height="60"/>
+                                <state key="normal" image="MusicOn.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="MusicButton" destination="hBR-dU-Xv2" eventType="touchUpInside" id="DnL-dN-fFN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56470590829849243" green="0.89411771297454834" blue="0.94117653369903564" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="Backlight1" destination="dmU-9u-WqY" id="8ll-h8-TeF"/>
+                        <outlet property="Backlight2" destination="mGJ-ut-aeI" id="OKJ-Uj-gqm"/>
+                        <outlet property="Backlight3" destination="qKf-dq-vbo" id="6jR-Aj-5BJ"/>
+                        <outlet property="Backlight4" destination="GUM-wR-4OX" id="cuL-p5-jhw"/>
+                        <outlet property="Backlight5" destination="VvT-BJ-qfn" id="irz-tS-4vh"/>
+                        <outlet property="Bacon1" destination="MU0-55-6u9" id="ab1-gE-K2Z"/>
+                        <outlet property="Bacon2" destination="L1p-a0-9xn" id="0Kb-Ae-uW3"/>
+                        <outlet property="Bacon3" destination="VXz-53-EFs" id="4q7-JF-S4e"/>
+                        <outlet property="Bacon4" destination="ME0-wj-13k" id="NOv-2w-aB2"/>
+                        <outlet property="Bacon5" destination="0t1-Ha-8d3" id="m3l-ma-aT2"/>
+                        <outlet property="BaconBomb1" destination="IVw-yI-VdP" id="gTU-FL-vZk"/>
+                        <outlet property="BaconBomb2" destination="ups-YZ-uMz" id="xY9-qs-TUF"/>
+                        <outlet property="BaconBomb3" destination="BU3-Ud-sCj" id="PuE-xU-sNi"/>
+                        <outlet property="BaconBomb4" destination="Ttw-R9-603" id="ycx-hP-HSp"/>
+                        <outlet property="BaconBomb5" destination="kAq-Qo-B8V" id="6it-BB-FBr"/>
+                        <outlet property="Cloud1" destination="1Nw-Pf-Pt3" id="E0W-4B-Uz7"/>
+                        <outlet property="Cloud2" destination="IaE-8a-5WE" id="wCy-ho-wLD"/>
+                        <outlet property="Cloud3" destination="PLg-vP-jK8" id="eah-1A-8je"/>
+                        <outlet property="FadeBG" destination="Lma-mG-vt3" id="2VD-fN-aLw"/>
+                        <outlet property="FinalScore" destination="XDR-Ew-bY3" id="ds2-Ih-zD3"/>
+                        <outlet property="GameOver" destination="Xz4-9z-2f4" id="7PD-jf-uVI"/>
+                        <outlet property="Ground" destination="elt-Qb-4nX" id="ZKI-na-FYN"/>
+                        <outlet property="GroundBG" destination="CqQ-1g-bhL" id="xNF-BV-XwP"/>
+                        <outlet property="HighScore" destination="cgo-5q-04e" id="KQC-2Q-R9e"/>
+                        <outlet property="HighScore2" destination="GKW-oH-yxL" id="tXW-ZV-69T"/>
+                        <outlet property="HighScoreBoard" destination="DU6-4d-mZG" id="832-a8-xso"/>
+                        <outlet property="Instructions" destination="FDH-ov-fXL" id="4oZ-UH-5sF"/>
+                        <outlet property="MusicOnOff" destination="IZd-1w-QmY" id="aeJ-hM-hdo"/>
+                        <outlet property="NightBG" destination="TBu-4N-xTm" id="B3u-xd-1gY"/>
+                        <outlet property="Piggy" destination="Fdv-ig-egb" id="8lc-PQ-DMu"/>
+                        <outlet property="Rank" destination="Q8p-9O-NUn" id="sRE-p0-tdS"/>
+                        <outlet property="Score" destination="SqA-jh-gFe" id="yCI-CW-BWc"/>
+                        <outlet property="ScoreBoard" destination="iGY-Hb-Y6T" id="IQU-gj-zpL"/>
+                        <outlet property="StartGame" destination="ebf-Dz-5eD" id="OFI-sT-8nF"/>
+                        <outlet property="Sun" destination="GfE-Ku-gWs" id="Goa-Fr-pqb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amI-QU-e1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="-17"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Backlight.png" width="30" height="30"/>
+        <image name="BaconBomb4.png" width="10" height="10"/>
+        <image name="Baconfall.png" width="39" height="28"/>
+        <image name="Cloud.png" width="310" height="180"/>
+        <image name="FadeBG.png" width="1" height="1136"/>
+        <image name="FingerMoved.png" width="50" height="100"/>
+        <image name="GameOver.png" width="600" height="216"/>
+        <image name="Ground.png" width="2666" height="249"/>
+        <image name="GroundBG.png" width="640" height="134"/>
+        <image name="HomeBacon.png" width="200" height="141"/>
+        <image name="HomePiggie.png" width="372" height="372"/>
+        <image name="Instructions.png" width="327" height="585"/>
+        <image name="MusicOn.png" width="167" height="169"/>
+        <image name="NightBG.png" width="1440" height="2560"/>
+        <image name="Piggie4.png" width="51" height="48"/>
+        <image name="PiggieFly.png" width="1440" height="671"/>
+        <image name="RankImage.png" width="410" height="409"/>
+        <image name="ScoreBoard.png" width="400" height="267"/>
+        <image name="StartBG.png" width="640" height="1138"/>
+        <image name="StartImage.png" width="170" height="170"/>
+        <image name="Sun.png" width="150" height="150"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

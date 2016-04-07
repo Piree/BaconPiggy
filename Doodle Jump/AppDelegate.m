@@ -1,17 +1,65 @@
 //
 //  AppDelegate.m
-//  Doodle Jump
+//  Bacon Piggy
 //
 //  Created by Pierre on 2014-02-16.
 //  Copyright (c) 2014 Pierre. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "GAI.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-12622373-14"];
+    [GAI sharedInstance].defaultTracker = tracker;
+                              
+                             
+                              
+    /*[[GAI sharedInstance] trackerWithTrackingId:@"UA-50155414-1"];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];*/
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        UIStoryboard *storyBoard;
+        
+        
+        if([UIScreen mainScreen].bounds.size.height<567){
+            storyBoard = [UIStoryboard storyboardWithName:@"i4Main" bundle:nil];
+            UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+            [self.window setRootViewController:initViewController];
+        }
+        
+        if([UIScreen mainScreen].bounds.size.height>569){
+            storyBoard = [UIStoryboard storyboardWithName:@"iPadMain" bundle:nil];
+            UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+            [self.window setRootViewController:initViewController];
+        }
+        
+    }
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        UIStoryboard *storyBoard;
+        
+        storyBoard = [UIStoryboard storyboardWithName:@"iPadMain" bundle:nil];
+        UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+        [self.window setRootViewController:initViewController];
+    }
+    
+    return YES;
+    
     // Override point for customization after application launch.
     return YES;
 }
